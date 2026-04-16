@@ -84,7 +84,7 @@
     "test": "node scripts/run-test.ts",
     "test:node": "tsx --test test/*.test.ts test/**/*.test.ts",
     "test:bun": "bun test test/*.test.ts test/**/*.test.ts",
-    "test:smoke": "glob -c \"tsx --test\" \"test/*.test.ts\" && glob -c \"tsx --test\" \"test/plugins/*.test.ts\" && glob -c \"tsx --test\" \"test/util/*.test.ts\"",
+    "test:smoke": "glob -c tsx -g --test \"test/*.test.ts\" \"test/{plugins,util}/*.test.ts\"",
     "test:bun:smoke": "bun test test/*.test.ts test/{plugins,util}/*.test.ts",
     "prebuild": "pnpm run generate-plugin-defs && node rmdir.js dist",
     "build": "tsgo",
